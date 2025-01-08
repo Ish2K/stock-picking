@@ -51,3 +51,6 @@ get_top_stocks(tickers = df, exchange='NSE', piotroski_score_threshold=5, genera
 
 ```
 
+## Contributing
+Contributions to improve the stock-picking logic or enhance the functionality of this system are welcome! Feel free to fork the repository, submit issues, or open pull requests with suggestions or improvements.
+
