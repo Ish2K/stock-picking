@@ -1,36 +1,50 @@
 # Stock Picking System
 
-This Stock Picking Project is inspired from the book "The New Tao of Warren Buffet". This book explains the 
-mindset of the famous billionaire while making investment decisions. He stresses on the Earnings Per 
-Share (EPS), current price of the Company and finally, future growth prospects. 
+The **Stock Picking System** is inspired by the investment philosophy outlined in the book *"The New Tao of Warren Buffett"*. This book delves into the mindset of Warren Buffett, one of the most successful investors of all time. It emphasizes key metrics such as **Earnings Per Share (EPS)**, the **current stock price**, and **future growth potential** to evaluate companies.
 
-Let me give you an example- Let's assume a stock X is worth $100 and it's Earnings per Share is
-$2, which means for every dollar you invested- you made 2 cents which is worse than the 
-returns in fixed bonds or savings account interest. But the main reason why investors still
-buy these shares is because see huge growth potential. You will find it most common with
-Tech Stocks. 
+To illustrate, consider a stock priced at **$100** with an **EPS of $2**. This means for every dollar invested, you make **2 cents** in earnings, which is not as attractive as the returns from fixed bonds or savings accounts. However, the real appeal of such stocks lies in their **growth potential**. This is especially true for **tech stocks**, where investors are willing to overlook lower immediate returns for the possibility of exponential future growth.
 
-This project focuses on identifying the stocks that have high `Stock Returns (EPS/Stock Price)` and
-high `Piotroski Score`. High Piotroski Score indicates that the stock is healthy and is likely to 
-grow in future
+This project implements a stock-picking strategy that aims to identify companies with both:
 
-### Installation
+- **High Stock Returns**: Calculated as `EPS / Stock Price`, this ratio highlights companies with strong returns relative to their stock price.
+- **High Piotroski Score**: A metric that evaluates a company’s financial health. A higher Piotroski Score indicates that the stock is financially sound and has better chances of growth.
+
+By combining these two factors, this system helps pinpoint stocks that not only offer strong returns but also have a solid foundation for future success.
+
+---
+
+## Installation
+
+You can easily install the package using pip:
+
 ```bash
 pip install stock-picking
 ```
 
-### Usage
+## Usage
+### Example 1: Analyze a List of Stocks by Ticker Symbols
+
+You can input a list of stock tickers to analyze and filter based on the Piotroski Score threshold:
 ```bash
 from stock_picking import get_top_stocks
 
 # Example 1
 tickers = ["AAPL", "MO", "CINF", "WYNN"]
 get_top_stocks(tickers= tickers, exchange='NYSE', piotroski_score_threshold=5, generate_csv=True)
+```
 
+### Example 2: Analyze Stocks from a CSV File
+
+If you have a CSV file containing a list of stock tickers, you can pass the file path to the function:
+```bash
 # Example 2
 data_path = "./data/sp_500.csv"
 get_top_stocks(tickers = data_path, exchange='NYSE', piotroski_score_threshold=5, generate_csv=True)
+```
 
+### Example 3: Analyze Stocks from a DataFrame
+If you have the stock data in a DataFrame (e.g., loaded from a CSV), you can directly pass the DataFrame to the function:
+```bash
 # Example 3
 df = pd.read_csv("./data/nifty_50.csv")
 get_top_stocks(tickers = df, exchange='NSE', piotroski_score_threshold=5, generate_csv=True)
