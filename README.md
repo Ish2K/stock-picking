@@ -6,8 +6,8 @@ Share (EPS), current price of the Company and finally, future growth prospects.
 
 Let me give you an example- Let's assume a stock X is worth $100 and it's Earnings per Share is
 $2, which means for every dollar you invested- you made 2 cents which is worse than the 
-returns in fixed bonds or savings account interest. But there are several factors why investors till
-buy these shares because they see huge growth potential. You will find it most common with
+returns in fixed bonds or savings account interest. But the main reason why investors still
+buy these shares is because see huge growth potential. You will find it most common with
 Tech Stocks. 
 
 This project focuses on identifying the stocks that have high `Stock Returns (EPS/Stock Price)` and
