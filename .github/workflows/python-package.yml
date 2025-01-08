@@ -38,29 +38,4 @@ jobs:
       - name: Run tests
         run: |
           pytest --doctest-modules --junitxml=junit/test-results.xml
-
-      # Step 5: Check formatting (optional)
-      - name: Check code formatting with black
-        run: |
-          pip install black
-          black --check .
-
-      # Step 6: Build package
-      - name: Build the package
-        run: |
-          python setup.py sdist bdist_wheel
-
-      # Step 7: Upload test results (optional)
-      - name: Upload test results
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-results
-          path: junit/test-results.xml
-
-      # Step 8: Upload built package (optional)
-      - name: Upload built package
-        uses: actions/upload-artifact@v3
-        with:
-          name: dist
-          path: dist/*
+          
