@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="stock-picking",  # Replace with your package name
-    version="0.1.0",       # Version of your package
+    version="0.1.1",       # Version of your package
     description="A stock-picking system based on Warren Buffett's principles and the Piotroski score.",
     long_description=open("README.md").read(),  # Ensure you have a README.md
     long_description_content_type="text/markdown",

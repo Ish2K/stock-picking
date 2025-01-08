@@ -19,7 +19,7 @@ def get_top_stocks(
     Parameters:
     tickers (str or list): If a string, it should be a path to csv file containing "Symbol" column.
         If a list, it should contain stock ticker symbols.
-    exchange (str): The stock exchange to fetch the data from - It can either be NSE or NYSE.
+    exchange (str): The stock exchange to fetch the data from - It can only be ['NYSE', 'NASDAQ', 'NSE', 'BSE'].
     stock_return_threshold (float): The threshold for the EPS / Last Price ratio (risk free return).
     piotroski_score_threshold (int): The minimum Piotroski Score required for a stock to be considered.
     market_cap_threshold (float): The minimum market capitalization required for a stock to be considered.
@@ -39,9 +39,11 @@ def get_top_stocks(
 
     tickers = list(set(tickers))
 
-    if(exchange == 'NSE'):
-        tickers = [ticker + '.NS' for ticker in tickers]
+    assert exchange in ['NYSE', 'NASDAQ', 'NSE', 'BSE'], "Exchange should be in ['NYSE', 'NASDAQ', 'NSE', 'BSE']"
 
+    if(exchange == 'NSE' or exchange == 'BSE'):
+        tickers = [ticker + '.NS' for ticker in tickers]
+    
     ticker_financials = dict()
 
     for ticker in tickers:
