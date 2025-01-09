@@ -51,6 +51,20 @@ get_top_stocks(tickers = df, exchange='NSE', piotroski_score_threshold=5, genera
 
 ```
 
+## Limitations
+
+- Since this project uses [yfinance](https://pypi.org/project/yfinance/), make sure 
+to adhere to the [rate limits](https://help.yahooinc.com/dsp-api/docs/rate-limits)
+
 ## Contributing
 Contributions to improve the stock-picking logic or enhance the functionality of this system are welcome! Feel free to fork the repository, submit issues, or open pull requests with suggestions or improvements.
 
+## Next Steps
+
+### Basic
+- Adding more data sources for stock financial data fetching
+- Improving filtering algorithm
+- Adding more test case
+
+### Advanced
+- Adding LLM model to give recent developments and details about shortlisted stocks
